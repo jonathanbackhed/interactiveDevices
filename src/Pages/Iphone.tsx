@@ -2,13 +2,13 @@ import React from "react";
 
 import { Clock } from "../components/Clock";
 import { AppIcon } from "../components/AppIcon";
+import { Dock } from "../components/Dock";
 
 const Iphone = () => {
   return (
-    <div className="relative bg-iphoneLight bg-no-repeat bg-center bg-iphone rounded-iphone">
+    <div className="relative bg-iphoneLight dark:bg-iphoneDark bg-no-repeat bg-center bg-iphone rounded-iphone">
       <img src="./src/images/iphone.png" alt="iphone" />
-      {/* Klocka ska använda lokal tid */}
-      <div className="absolute  rounded-lg text-white w-[80px] h-[25px] top-[23px] left-[53px] text-center">
+      <div className="absolute rounded-lg text-white w-[80px] h-[25px] top-[23px] left-[53px] text-center">
         {/* 9:41 */}
         <Clock />
       </div>
@@ -26,10 +26,17 @@ const Iphone = () => {
         <div className="absolute w-[20px] h-[9px] bg-white border-2 border-gray-900 border-opacity-10 rounded-sm bottom-[5px] left-[51px]"></div>
         <div className="absolute w-[4px] h-[4px] bg-gray-900 bg-opacity-10 bottom-[7px] left-[70px]"></div>
       </div>
-      <div className="absolute bg-blue-500 rounded-t-lg rounded-b-3xl w-[387px] h-[810px] top-[50px] left-[24px] px-3 py-8">
+      <div className="absolute rounded-t-lg rounded-b-3xl w-[387px] h-[810px] top-[50px] left-[24px] px-3 py-8">
         <div className="grid grid-cols-4 justify-items-center">
-          <AppIcon />
+          <AppIcon
+            image="https://via.placeholder.com/70"
+            name="Test"
+            to="iphone"
+          />
+          <AppIcon image="https://via.placeholder.com/70" to="iphone" />
         </div>
+
+        <Dock />
       </div>
     </div>
   );
