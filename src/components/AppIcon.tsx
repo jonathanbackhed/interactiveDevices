@@ -5,21 +5,39 @@ interface Props {
   image: string;
   name?: string;
   to: string;
+  href: boolean;
 }
 
-export const AppIcon = ({ image, name, to }: Props) => {
-  return (
-    <Link to={`/${to}`}>
-      <div className="my-2">
-        <div className="w-[70px] h-[70px] bg-green-500 rounded-2xl">
-          <img
-            src={image}
-            className="w-[70px] h-[70px] rounded-2xl"
-            alt="app icon"
-          />
+export const AppIcon = ({ image, name, to, href }: Props) => {
+  if (href) {
+    return (
+      <a href={to} target="_blank">
+        <div className="my-2">
+          <div className="w-[70px] h-[70px] bg-white rounded-3xl">
+            <img
+              src={image}
+              className="w-[70px] h-[70px] rounded-2xl"
+              alt="app icon"
+            />
+          </div>
+          {name && <h1 className="text-center text-white text-xs">{name}</h1>}
         </div>
-        {name && <h1 className="text-center text-white text-xs">{name}</h1>}
-      </div>
-    </Link>
-  );
+      </a>
+    );
+  } else {
+    return (
+      <Link to={`/${to}`}>
+        <div className="my-2">
+          <div className="w-[70px] h-[70px] bg-white rounded-3xl">
+            <img
+              src={image}
+              className="w-[70px] h-[70px] rounded-2xl"
+              alt="app icon"
+            />
+          </div>
+          {name && <h1 className="text-center text-white text-xs">{name}</h1>}
+        </div>
+      </Link>
+    );
+  }
 };

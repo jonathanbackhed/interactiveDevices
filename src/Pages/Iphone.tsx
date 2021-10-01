@@ -17,7 +17,7 @@ const Iphone = () => {
         <div className="absolute w-[3px] h-[5px] bg-white bottom-[5px] left-[4px]"></div>
         <div className="absolute w-[3px] h-[7px] bg-white bottom-[5px] left-[9px]"></div>
         <div className="absolute w-[3px] h-[9px] bg-white bottom-[5px] left-[14px]"></div>
-        <div className="absolute w-[3px] h-[11px] bg-white bottom-[5px] left-[19px]"></div>
+        <div className="absolute w-[3px] h-[11px] bg-gray-500 dark:bg-white bottom-[5px] left-[19px]"></div>
 
         <div className="absolute text-white text-sm bottom-[0px] left-[27px]">
           5G
@@ -29,11 +29,11 @@ const Iphone = () => {
       <div className="absolute rounded-t-lg rounded-b-3xl w-[387px] h-[810px] top-[50px] left-[24px] px-3 py-8">
         <div className="grid grid-cols-4 justify-items-center">
           <AppIcon
-            image="https://via.placeholder.com/70"
-            name="Test"
-            to="iphone"
+            image="./src/images/linkedin-app.png"
+            name="LinkedIn"
+            to="https://www.linkedin.com/"
+            href={true}
           />
-          <AppIcon image="https://via.placeholder.com/70" to="iphone" />
         </div>
 
         <Dock />
